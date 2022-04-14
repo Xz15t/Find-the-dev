@@ -1,0 +1,46 @@
+html {
+  box-sizing: border-box;
+  font-size: var(--default-font-size); //10px default || 62.5%
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition: background-color 0.2s ease, color 0.1s ease;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: "Space Mono", sans-serif;
+  background-color: hsl(var(--app-bg));
+}
+
+main {
+  padding: 3.2rem 2.4rem;
+  margin: 0 auto;
+
+  @include responsive(tab-port) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    max-width: 57.3rem;
+  }
+
+  @include responsive(reg-desk) {
+    max-width: 73rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}

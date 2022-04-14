@@ -1,0 +1,41 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3.6rem;
+
+  &__site-name {
+    font-size: 2.6rem;
+    font-family: "Space Mono", sans-serif;
+    text-decoration: none;
+    color: hsl(var(--app-name-txt));
+    font-weight: 700;
+  }
+
+  &__toggle {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1.3rem;
+    letter-spacing: 2.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: "Space Mono", sans-serif;
+    gap: 1.6rem;
+    background-color: transparent;
+    color: hsl(var(--toggle-btn));
+    border: none;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+
+    svg {
+      fill: hsl(var(--toggle-btn));
+    }
+
+    &:hover {
+      color: hsl(var(--toggle-hover));
+
+      svg {
+        fill: hsl(var(--toggle-hover));
+      }
+    }
+  }
+}

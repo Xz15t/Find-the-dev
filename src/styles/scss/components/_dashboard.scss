@@ -1,0 +1,182 @@
+.section-dashboard {
+  padding: 3.2rem 2.4rem;
+  margin: 1.6rem 0;
+  background-color: hsl(var(--component-bg));
+  border-radius: 1.5rem;
+  color: hsl(var(--color-white));
+  box-shadow: var(--box-shadow);
+
+  @include responsive(reg-desk) {
+    display: flex;
+    gap: 3rem;
+    padding: 4.8rem;
+  }
+
+  &__main {
+    display: flex;
+    gap: 2rem;
+    flex-direction: column;
+
+    @include responsive(reg-desk) {
+    }
+
+    .top {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .user-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      
+
+      @include responsive(reg-desk) {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      &__name {
+        font-size: 1.6rem;
+        line-height: 1;
+        color: hsl(var(--dashboard-txt));
+
+        @include responsive(tab-port) {
+          font-size: 2.6rem;
+        }
+      }
+
+      &__github-link {
+        color: hsl(var(--color-primary-blue));
+        text-decoration: none;
+        font-size: 1.3rem;
+
+        @include responsive(tab-port) {
+          font-size: 1.6rem;
+        }
+
+        @include responsive(reg-desk) {
+          order: 3;
+        }
+      }
+
+      &__date {
+        font-size: 1.3rem;
+        color: hsl(var(--user-bio-txt));
+
+        @include responsive(tab-port) {
+          font-size: 1.5rem;
+        }
+
+        @include responsive(reg-desk) {
+          order: 2;
+          text-align: right;
+        }
+      }
+    }
+
+    .user-bio {
+      p {
+        font-size: 1.3rem;
+        color: hsl(var(--user-bio-txt));
+        @include responsive(tab-port) {
+          font-size: 1.5rem;
+        }
+      }
+    }
+
+    .user-stats {
+      display: flex;
+      justify-content: space-around;
+      font-size: 1.1rem;
+      background-color: hsl(var(--user-stats-bg));
+      text-align: center;
+      padding: 1.8rem 2rem;
+      border-radius: 1rem;
+
+      @include responsive(tab-port) {
+        font-size: 1.3rem;
+        text-align: left;
+        justify-content: flex-start;
+      }
+
+      &__stat {
+        color: hsl(var(--user-text));
+
+        @include responsive(tab-port) {
+          padding-right: 9rem;
+        }
+      }
+
+      span {
+        font-weight: 700;
+        font-size: 1.6rem;
+        display: block;
+
+        @include responsive(tab-port) {
+          font-size: 2.2rem;
+        }
+      }
+    }
+
+    .user-links {
+      display: grid;
+      justify-items: start;
+      grid-template-columns: 1fr;
+      gap: 1.6rem;
+      font-size: 1.3rem;
+      width: 100%;
+      overflow: hidden;
+
+      @include responsive(tab-port) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      div {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 1rem;
+        color: hsl(var(--color-white));
+
+        & > * {
+          white-space: nowrap;
+        }
+
+        svg {
+          fill: hsl(var(--icon-color));
+        }
+
+        svg.available {
+          opacity: 1;
+        }
+
+        svg.unavailable {
+          opacity: 0.5;
+        }
+
+        a.available:hover {
+          text-decoration: underline;
+        }
+
+        .available {
+          display: inline-block;
+          max-width: 25rem;
+          color: hsl(var(--user-bio-txt));
+        }
+
+        .unavailable {
+          color: hsl(var(--color-grey));
+        }
+
+        .blog {
+          text-decoration: none;
+          color: hsl(var(--color-white));
+        }
+      }
+    }
+  }
+}

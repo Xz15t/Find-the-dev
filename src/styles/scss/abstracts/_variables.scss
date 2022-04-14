@@ -1,0 +1,63 @@
+// COLOR VARIABLES
+:root {
+  --color-primary-blue: 212 100% 50%;
+  --color-pale-blue: 217 35% 45%;
+  --color-light-blue: 212 100% 69%;
+
+  --color-grey: 217 20% 51%;
+  --color-grey-light: 227 100% 98%;
+  --color-off-white: 0 0% 100%;
+  --color-white: 0 0% 100%;
+
+  --color-dark-1: 217 21% 21%;
+  --color-dark-2: 220 40% 13%;
+  --color-dark-3: 222 41% 20%;
+
+  --color-error: 0 92% 62%;
+  --default-font-size: 62.5%;
+  --box-shadow: 0 1.6rem 3rem -1rem rgba(0, 0, 0, 0.2);
+}
+
+// FONT VARIABLES
+
+.light-theme {
+  --app-bg: var(--color-grey-light);
+  --component-bg: var(--color-white);
+  --user-stats-bg: var(--color-grey-light);
+  --user-text: var(--color-dark-1);
+  --dashboard-txt: var(--color-dark-1);
+  --user-bio-txt: var(--color-pale-blue);
+  --app-name-txt: #222731;
+  --toggle-btn: var(--color-grey);
+  --toggle-hover: var(--color-dark-2);
+  --icon-color: var(--color-pale-blue);
+}
+
+.dark-theme {
+  --app-bg: var(--color-dark-2);
+  --component-bg: var(--color-dark-3);
+  --user-stats-bg: var(--color-dark-2);
+  --user-text: var(--color-white);
+  --dashboard-txt: var(--color-white);
+  --user-bio-txt: var(--color-white);
+  --app-name-txt: var(--color-white);
+  --toggle-btn: var(--color-white);
+  --toggle-hover: var(--color-pale-blue);
+  --icon-color: var(--color-white);
+}
+
+// .light-theme {
+//   --app-bg: $color-grey-light;
+//   --component-bg: $color-white;
+//   --user-stats-bg: $color-grey-light;
+//   --user-header-text: $color-dark-1;
+//   --app-name-txt: #222731;
+// }
+
+// .dark-theme {
+//   --app-bg: $color-dark-2;
+//   --component-bg: $color-dark-3;
+//   --user-stats-bg: $color-dark-2;
+//   --user-header-text: $color-white;
+//   --app-name-txt: $color-white;
+// }

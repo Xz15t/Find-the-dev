@@ -1,0 +1,384 @@
+:root {
+  --color-primary-blue: 212 100% 50%;
+  --color-pale-blue: 217 35% 45%;
+  --color-light-blue: 212 100% 69%;
+  --color-grey: 217 20% 51%;
+  --color-grey-light: 227 100% 98%;
+  --color-off-white: 0 0% 100%;
+  --color-white: 0 0% 100%;
+  --color-dark-1: 217 21% 21%;
+  --color-dark-2: 220 40% 13%;
+  --color-dark-3: 222 41% 20%;
+  --color-error: 0 92% 62%;
+  --default-font-size: 62.5%;
+  --box-shadow: 0 1.6rem 3rem -1rem rgba(0, 0, 0, 0.2);
+}
+
+.light-theme {
+  --app-bg: var(--color-grey-light);
+  --component-bg: var(--color-white);
+  --user-stats-bg: var(--color-grey-light);
+  --user-text: var(--color-dark-1);
+  --dashboard-txt: var(--color-dark-1);
+  --user-bio-txt: var(--color-pale-blue);
+  --app-name-txt: #222731;
+  --toggle-btn: var(--color-grey);
+  --toggle-hover: var(--color-dark-2);
+  --icon-color: var(--color-pale-blue);
+}
+
+.dark-theme {
+  --app-bg: var(--color-dark-2);
+  --component-bg: var(--color-dark-3);
+  --user-stats-bg: var(--color-dark-2);
+  --user-text: var(--color-white);
+  --dashboard-txt: var(--color-white);
+  --user-bio-txt: var(--color-white);
+  --app-name-txt: var(--color-white);
+  --toggle-btn: var(--color-white);
+  --toggle-hover: var(--color-pale-blue);
+  --icon-color: var(--color-white);
+}
+
+html {
+  box-sizing: border-box;
+  font-size: var(--default-font-size);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  transition: background-color 0.2s ease, color 0.1s ease;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  font-family: "Space Mono", sans-serif;
+  background-color: hsl(var(--app-bg));
+}
+
+main {
+  padding: 3.2rem 2.4rem;
+  margin: 0 auto;
+}
+@media (min-width: 600px) {
+  main {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0;
+    max-width: 57.3rem;
+  }
+}
+@media (min-width: 1200px) {
+  main {
+    max-width: 73rem;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+.section-dashboard {
+  padding: 3.2rem 2.4rem;
+  margin: 1.6rem 0;
+  background-color: hsl(var(--component-bg));
+  border-radius: 1.5rem;
+  color: hsl(var(--color-white));
+  box-shadow: var(--box-shadow);
+}
+@media (min-width: 1200px) {
+  .section-dashboard {
+    display: flex;
+    gap: 3rem;
+    padding: 4.8rem;
+  }
+}
+.section-dashboard__main {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+.section-dashboard__main .top {
+  display: flex;
+  gap: 2rem;
+}
+.section-dashboard__main .user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .section-dashboard__main .user-info {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+.section-dashboard__main .user-info__name {
+  font-size: 1.6rem;
+  line-height: 1;
+  color: hsl(var(--dashboard-txt));
+}
+@media (min-width: 600px) {
+  .section-dashboard__main .user-info__name {
+    font-size: 2.6rem;
+  }
+}
+.section-dashboard__main .user-info__github-link {
+  color: hsl(var(--color-primary-blue));
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+@media (min-width: 600px) {
+  .section-dashboard__main .user-info__github-link {
+    font-size: 1.6rem;
+  }
+}
+@media (min-width: 1200px) {
+  .section-dashboard__main .user-info__github-link {
+    order: 3;
+  }
+}
+.section-dashboard__main .user-info__date {
+  font-size: 1.3rem;
+  color: hsl(var(--user-bio-txt));
+}
+@media (min-width: 600px) {
+  .section-dashboard__main .user-info__date {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .section-dashboard__main .user-info__date {
+    order: 2;
+    text-align: right;
+  }
+}
+.section-dashboard__main .user-bio p {
+  font-size: 1.3rem;
+  color: hsl(var(--user-bio-txt));
+}
+@media (min-width: 600px) {
+  .section-dashboard__main .user-bio p {
+    font-size: 1.5rem;
+  }
+}
+.section-dashboard__main .user-stats {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.1rem;
+  background-color: hsl(var(--user-stats-bg));
+  text-align: center;
+  padding: 1.8rem 2rem;
+  border-radius: 1rem;
+}
+@media (min-width: 600px) {
+  .section-dashboard__main .user-stats {
+    font-size: 1.3rem;
+    text-align: left;
+    justify-content: flex-start;
+  }
+}
+.section-dashboard__main .user-stats__stat {
+  color: hsl(var(--user-text));
+}
+@media (min-width: 600px) {
+  .section-dashboard__main .user-stats__stat {
+    padding-right: 9rem;
+  }
+}
+.section-dashboard__main .user-stats span {
+  font-weight: 700;
+  font-size: 1.6rem;
+  display: block;
+}
+@media (min-width: 600px) {
+  .section-dashboard__main .user-stats span {
+    font-size: 2.2rem;
+  }
+}
+.section-dashboard__main .user-links {
+  display: grid;
+  justify-items: start;
+  grid-template-columns: 1fr;
+  gap: 1.6rem;
+  font-size: 1.3rem;
+  width: 100%;
+  overflow: hidden;
+}
+@media (min-width: 600px) {
+  .section-dashboard__main .user-links {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.section-dashboard__main .user-links div {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1rem;
+  color: hsl(var(--color-white));
+}
+.section-dashboard__main .user-links div > * {
+  white-space: nowrap;
+}
+.section-dashboard__main .user-links div svg {
+  fill: hsl(var(--icon-color));
+}
+.section-dashboard__main .user-links div svg.available {
+  opacity: 1;
+}
+.section-dashboard__main .user-links div svg.unavailable {
+  opacity: 0.5;
+}
+.section-dashboard__main .user-links div a.available:hover {
+  text-decoration: underline;
+}
+.section-dashboard__main .user-links div .available {
+  display: inline-block;
+  max-width: 25rem;
+  color: hsl(var(--user-bio-txt));
+}
+.section-dashboard__main .user-links div .unavailable {
+  color: hsl(var(--color-grey));
+}
+.section-dashboard__main .user-links div .blog {
+  text-decoration: none;
+  color: hsl(var(--color-white));
+}
+
+.avatar {
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+}
+@media (min-width: 900px) {
+  .avatar.mobile {
+    display: none;
+  }
+}
+.avatar.tab-desk {
+  display: none;
+}
+@media (min-width: 900px) {
+  .avatar.tab-desk {
+    display: block;
+  }
+}
+@media (min-width: 600px) {
+  .avatar {
+    height: 11.7rem;
+    width: 11.7rem;
+  }
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3.6rem;
+}
+.navbar__site-name {
+  font-size: 2.6rem;
+  font-family: "Space Mono", sans-serif;
+  text-decoration: none;
+  color: hsl(var(--app-name-txt));
+  font-weight: 700;
+}
+.navbar__toggle {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.3rem;
+  letter-spacing: 2.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-family: "Space Mono", sans-serif;
+  gap: 1.6rem;
+  background-color: transparent;
+  color: hsl(var(--toggle-btn));
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+.navbar__toggle svg {
+  fill: hsl(var(--toggle-btn));
+}
+.navbar__toggle:hover {
+  color: hsl(var(--toggle-hover));
+}
+.navbar__toggle:hover svg {
+  fill: hsl(var(--toggle-hover));
+}
+
+.btn {
+  color: hsl(var(--color-white));
+  padding: 2rem 1.6rem;
+  font-family: "Space Mono", sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 1;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease background-color;
+}
+.btn.blue {
+  background-color: hsl(var(--color-primary-blue));
+}
+.btn.blue:hover {
+  background-color: hsl(var(--color-light-blue));
+}
+
+.searchbar {
+  position: relative;
+  background-color: hsl(var(--component-bg));
+  padding: 0.65rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--box-shadow);
+}
+.searchbar__form {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-radius: 1.5rem;
+  padding-left: 1.6rem;
+}
+.searchbar__form .search {
+  padding: 2rem 0.8rem;
+  flex-grow: 2;
+  width: 100%;
+  background-color: transparent;
+  text-overflow: ellipsis;
+  border: none;
+  color: hsl(var(--user-bio-txt));
+  font-family: "Space Mono", sans-serif;
+}
+.searchbar__form .search::placeholder {
+  font-family: "Space Mono", sans-serif;
+  color: hsl(var(--user-bio-txt));
+}
+.searchbar__form .search:focus {
+  outline: none;
+}
+.searchbar__errorMsg {
+  user-select: none;
+  pointer-events: none;
+  position: absolute;
+  font-weight: 600;
+  right: 12rem;
+  top: 35%;
+  color: hsl(var(--color-error));
+  font-size: 1.5rem;
+}
+
+/*# sourceMappingURL=app.css.map */

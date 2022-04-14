@@ -1,0 +1,46 @@
+.searchbar {
+  position: relative;
+  background-color: hsl(var(--component-bg));
+  padding: 0.65rem 1rem;
+  border-radius: 1.5rem;
+  box-shadow: var(--box-shadow);
+
+  &__form {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border-radius: 1.5rem;
+    padding-left: 1.6rem;
+
+    .search {
+      padding: 2rem 0.8rem;
+      flex-grow: 2;
+      width: 100%;
+      background-color: transparent;
+      text-overflow: ellipsis;
+      border: none;
+      color: hsl(var(--user-bio-txt));
+      font-family: "Space Mono", sans-serif;
+
+      &::placeholder {
+        font-family: "Space Mono", sans-serif;
+        color: hsl(var(--user-bio-txt));
+      }
+
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  &__errorMsg {
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+    font-weight: 600;
+    right: 12rem;
+    top: 35%;
+    color: hsl(var(--color-error));
+    font-size: 1.5rem;
+  }
+}
